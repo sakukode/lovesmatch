@@ -17,10 +17,15 @@
 
 			<div class="col-md-2">
 				<div class="match-making">
+					{{#unless isLoved _id}}
 					<a href="#" class="btnMakingMatch" id="btnLove">
 					<p class="text-center"><i class="fa fa-heart-o fa-5x"></i></p>
 					<h2 class="text-center textLove">LOVE</h2>
 					</a>
+					{{else}}
+					<p class="text-center"><i class="fa fa-heart fa-5x"></i></p>
+					<h2 class="text-center textLove">YOU LOVE IT</h2>
+					{{/unless}}
 				</div>
 			</div>
 
