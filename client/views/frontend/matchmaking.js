@@ -28,4 +28,8 @@ Template.matchMakingIndex.helpers({
         if(doc)
             return true;
     },
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 4e7f4c2be51e29eb153951cb923e364386c7c9ec
