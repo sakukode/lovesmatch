@@ -12,3 +12,20 @@ Template.matchMakingIndex.events = {
     	Session.set('search', false);
     }
 };
+
+Template.matchMakingIndex.helpers({
+    isLoved: function (_id) {
+        var firstUserId = Meteor.userId();
+        var criteria = {
+            $and: [
+                {'firstUserId': firstUserId},
+                {'secondUserId': _id},
+            ]
+        };
+
+        var doc = LoveMatches.findOne(criteria);
+        
+        if(doc)
+            return true;
+    },
+});
