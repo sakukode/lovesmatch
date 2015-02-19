@@ -25,8 +25,6 @@ Template.matchMakingIndex.helpers({
 
         var doc = LoveMatches.findOne(criteria);
         
-        //return doc;
-        
         if(doc)
             return true;
     },
