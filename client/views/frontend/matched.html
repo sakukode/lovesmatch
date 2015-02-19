@@ -1,0 +1,25 @@
+<template name="matchedIndex">
+	<div class="container">
+		{{#if isEmpty}}
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Sorry, No Person matches with you</h3>
+			</div>
+		</div>
+		{{else}}
+		<div class="row">
+			<h3>Congratulations, There are {{totalMatches}} person matches with you</h3>
+		</div>
+		<hr>
+		<div class="row">
+			{{#each models}}
+			<div class="col-md-4">
+				<img class="img-thumbnail" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/love.jpg{{/if}}"/>
+				<h3>{{firstUser.profile.name}} , {{firstUser.profile.age}}</h3>
+				<p><a href="/matched/view/{{firstUserId}}" class="btn btn-danger">View Profile</a></p>
+			</div>
+			{{/each}}
+		</div>
+		{{/if}}
+	</div>
+</template>

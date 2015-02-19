@@ -1,0 +1,78 @@
+<template name="memberProfile">
+
+	<div class="container">
+		<div class="row">
+			{{#with model}}
+			<div class="col-md-4">
+				<img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/love.jpg{{/if}}"/>
+				<p>
+					<span class="btn-file btn-danger btn-lg btn-block">
+						Change Profile Picture <input type="file" name="image" id="photo"/>
+					</span>
+				</p>
+			</div>
+			<div class="col-md-8">
+				<legend>Change Profile</legend>
+				<div class="row">
+					<input type="hidden" name="role" id="role" value="{{profile.mugenRoleGroupId}}">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input class="form-control input-lg" name="name" id="name" value="{{profile.name}}"/>
+						</div>
+						<div class="form-group">
+							<label for="age">Age</label>
+							<input class="form-control input-lg" name="age" id="age" value="{{profile.age}}"/>
+						</div>
+						<div class="form-group">
+							<label for="hobi">Hobi</label>
+							<input class="form-control input-lg" name="hobi" id="hobi" value="{{profile.hobi}}"/>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="job">Job</label>
+							<select class="form-control input-lg" name="job" id="job">
+								<option>--Choose Option--</option>
+			                    {{#each jobs}}
+			                        <option value="{{_id}}" {{isSelected ../profile.jobId}}>{{name}}</option>
+			                    {{/each}}
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="country">Country</label>
+							<select class="form-control input-lg" name="country" id="country">
+								<option>--Choose Option--</option>
+								{{#each countries}}
+			                        <option value="{{_id}}" {{isSelected ../profile.countryId}}>{{name}}</option>
+			                    {{/each}}
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="region">Region</label>
+							<select class="form-control input-lg" name="region" id="region">
+								<option>--Choose Option--</option>
+								{{#each regions}}
+			                        <option value="{{_id}}" {{isSelected ../profile.regionId}}>{{name}}</option>
+			                    {{/each}}
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="city">City</label>
+							<select class="form-control input-lg" name="city" id="city">
+								<option>--Choose Option--</option>
+								{{#each cities}}
+			                        <option value="{{_id}}" {{isSelected ../profile.cityId}}>{{name}}</option>
+			                    {{/each}}
+							</select>
+						</div>
+						<div class="form-group">
+							 <input id="btnChangeProfile" class="pull-right btn-lg btn btn-danger btn-red" type="submit" value="Save Changes"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/with}}
+		</div>
+	</div>	
+</template>

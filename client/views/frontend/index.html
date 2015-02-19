@@ -1,0 +1,88 @@
+<template name="homeIndex">
+    <div class="container">  
+        
+        <div class="row">
+	      	<div class="col-md-6">
+	      		<iframe width="500" height="315" src="https://www.youtube.com/embed/WwvUyJmzyHg" frameborder="0"></iframe>
+	      	</div>
+	        <div class="col-md-4">
+	        	{{#if currentUser}}        
+			        <h3>Find Your Love</h3>
+			        <hr>
+		        {{else}}   
+		        	{{#if showFormRegister}}
+		        	<div class="sign-form">
+				        <div class="row">
+				            <div  class="col-md-12">
+				           		<legend>Sign Up</legend>
+				                <form role="form">
+				                    <div class="form-group">
+				                        <label for="email">Email</label>
+				                        <input type="text" class="form-control input-lg" id="email" placeholder="Email">
+				                    </div>                        
+				                    <div class="form-group">
+				                        <label for="password">Password</label>
+				                        <input type="password" class="form-control input-lg" id="password" placeholder="Password">
+				                    </div>
+				                    <div class="form-group">
+				                        <label for="password">Confirm Password</label>
+				                        <input type="password" class="form-control input-lg" id="conf-password" placeholder="Confirm Password">
+				                    </div>
+				                    <div class="form-group">
+				                        <label for="name">Name</label>
+				                        <input type="text" class="form-control input-lg" id="name" placeholder="Name">
+				                    </div>
+				                    <div class="form-group">
+				                    	<label for="gender">Gender</label>
+				                    	<div class="radio">
+										  <label>
+										    <input type="radio" name="gender" value="male" checked> Male
+										  </label>
+										</div>
+										<div class="radio">
+										  <label>
+										    <input type="radio" name="gender" value="female"> Female
+										  </label>
+										</div>
+				                    </div>
+				                    <div class="form-group">
+				                        <input id="btnRegister" class="pull-right btn btn-danger btn-red" type="submit" value="Register"/>
+				                    </div>
+				                </form>
+				                <br>
+				                <br>
+				                <p class="text-right"><a href="#" id="loginForm">Already have account? Sign In</a></p>
+				            </div>
+				        </div>
+				    </div>
+				    {{else}}
+			       	<div class="sign-form">
+				        <div class="row">
+				            <div  class="col-md-12">
+				                              
+				                <form role="form">
+				                    <legend>Sign In</legend>
+				                    <div class="form-group">
+				                        <label for="email">Email</label>
+				                        <input type="text" class="form-control input-lg" id="email" placeholder="Email" autofocus>
+				                    </div>
+				                    <div class="form-group">
+				                        <label for="password">Password</label>
+				                        <input type="password" class="form-control input-lg" id="password" placeholder="Password">
+				                    </div>
+				                    <div class="form-group">
+				                        <input id="btnLogin" class="pull-right btn btn-danger btn-red" type="submit" value="Sign In"/>
+				                    </div>
+				                </form>
+				                <br/>
+				                <br>
+				                <p class="text-right"><a href="#" id="registerForm">Don't have account? Sign Up!</a></p>
+				            </div>
+				        </div>
+			    	</div>			    	
+			    	{{/if}}
+	    		{{/if}}
+	    	</div> 
+    	</div>
+    </div>
+</template>

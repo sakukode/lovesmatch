@@ -1,0 +1,13 @@
+<template name="cities_form">
+    <form id="cities_form"> 
+        <div class="form-group {{#if error 'name'}}has-error{{/if}}">
+<label for="name" class="control-label">City Name *</label>
+<input type="text" id="name" value="{{name}}" placeholder="City Name" class="form-control">
+<span class="help-block">{{error "name"}}</span>
+</div>
+
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
+        <a href="{{pathFor 'citiesIndex'}}" class="btn btn-default">Back</a>                        
+    </form>
+</template>
+

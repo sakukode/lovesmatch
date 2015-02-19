@@ -1,0 +1,35 @@
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 0;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+.match-making{
+    margin-top: 70px;
+}
+
+.fa-heart-o, .textLove {
+    color: #d9534f !important;
+}
+.btnMakingMatch {
+    text-decoration: none;
+}
+a.btnMakingMatch:hover{
+    border-bottom: none;
+    text-decoration: none;
+}

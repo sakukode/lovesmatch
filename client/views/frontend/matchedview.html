@@ -1,0 +1,61 @@
+<template name="matchedView">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Detail Profile</h3>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			{{#with model}}
+			<div class="col-md-4">
+				<img class="img-thumbnail" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/love.jpg{{/if}}"/>
+				
+			</div>
+			<div class="col-md-6">
+				<table class="table">
+					<tbody>
+					<tr>
+						<td>Name</td>
+						<td>:</td>
+						<td>{{profile.name}}</td>
+					</tr>
+					<tr>
+						<td>Age</td>
+						<td>:</td>
+						<td>{{profile.age}}</td>
+					</tr>
+					<tr>
+						<td>Country</td>
+						<td>:</td>
+						<td>{{country.name}}</td>
+					</tr>
+					<tr>
+						<td>Region</td>
+						<td>:</td>
+						<td>{{region.name}}</td>
+					</tr>
+					<tr>
+						<td>City</td>
+						<td>:</td>
+						<td>{{city.name}}</td>
+					</tr>
+					<tr>
+						<td>Job</td>
+						<td>:</td>
+						<td>{{job.name}}</td>
+					</tr>
+					<tr>
+						<td>Hobi</td>
+						<td>:</td>
+						<td>{{profile.hobi}}</td>
+					</tr>
+					</tbody>
+				</table>
+				<hr>
+				<a href="{{pathFor 'matchedIndex'}}" class="btn btn-danger">Back</a>
+			</div>
+			{{/with}}
+		</div>
+	</div>
+</template>
